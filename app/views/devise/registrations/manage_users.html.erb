@@ -1,0 +1,58 @@
+<h3>Manage Users</h3>
+
+<div>
+  <%= devise_error_messages! %>
+  <%= form_for(@user, :url => create_user_path(resource_name), :html => { :role => 'form'}) do |f| %>
+    <fieldset>
+      <legend>Add User</legend>
+      <div class="row">
+        <div class="medium-5 columns">
+          <div class="row">
+            <div class="small-3 columns">
+              <%= f.label :name, class: 'inline' %>
+            </div>
+            <div class="small-9 columns">
+              <%= f.text_field :name, :autofocus => true, class: 'form-control' %>
+            </div>
+          </div>
+        </div>
+        <div class="medium-5 columns">
+          <div class="row">
+            <div class="small-3 columns">
+              <%= f.label :email, class: 'inline' %>
+            </div>
+            <div class="small-9 columns">
+              <%= f.email_field :email, class: 'form-control' %>
+            </div>
+          </div>
+        </div>
+        <div class="medium-2 columns">
+          <%= f.submit 'Add User', :class => 'button-xs right' %>
+        </div>
+      </div>
+    </fieldset>
+  <% end %>
+</div>
+
+<div class="row">
+  <table class="user-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @org_users.each do |user| %>
+        <tr>
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+          <td><%= user.role %></td>
+          <td><%= link_to(edit_user_path(user.id)) do %><i class="fi-widget"></i><% end %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

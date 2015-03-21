@@ -1,0 +1,4 @@
+<%# add navigation links to this file %>
+<% unless user_signed_in? %>
+  <li><%= link_to 'About', about_path %></li>
+<% end %>

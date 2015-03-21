@@ -1,0 +1,41 @@
+<div class="container">
+  <h3>Add Review Comments: <span class="subheader">Chris Durheim <small>in</small> Rediculous Project </span></h3>
+  <div class="row" data-equalizer>
+    <div class="review-box" data-equalizer-watch>
+      <div class="review-box-header"><h4>Review Target <small>by February 14, 2014</small></h4></div>
+      <div class="review-box-content">
+        <p>Execution of schedule - achieve completion of testing by Feb 10, 2014</p>
+      </div>
+    </div>
+    <div class="goal-box" data-equalizer-watch>
+      <div class="goal-box-header"><h4>Goal Description</h4></div>
+      <div class="goal-box-content">
+        <p>Make a schedule - delay the schedule - get yelled at - have a beer - focus on firefli.</p>
+      </div>
+      <div class="goal-box-footer">
+        <h5 class="text-right"><small>Last updated: January 8, 2014</small></h5>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="review-comment-box">
+      <div class="text-center">
+      <h3>Fill out review comments:</h3>
+      <%= form_tag "/", method: :get do %>
+        <div class="row">
+          <div class="form-review-comment-field">
+            <%= label_tag(:review_comment, "") %>
+            <%= text_area_tag(:review_comment, "", :autofocus => true, placeholder: "Enter Review Comments Here") %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-review-comment-buttons">
+            <%= submit_tag('Submit Comments', :class => 'button radius') %>
+            <a href="#"><button type="button" class="button alert radius">Cancel</button></a>
+          </div>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>

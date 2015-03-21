@@ -1,0 +1,8 @@
+<h1>Home#index</h1>
+<% @users.each do |user| %>
+  <% entry_tag = (signed_in? ? (current_user.id == user.id ? "h1" : "p") : "p") %>
+
+  <<%= entry_tag %>>
+  <%= user.role %>(<%= user.id %>): <%= user.name %> - <%= user.organization.name || "None" %></p>
+  </<%= entry_tag %>>
+<% end %>

@@ -1,0 +1,25 @@
+<div class="container">
+  <h3>Update Goal:</h3>
+   <div class="goal-update-box">
+    <%= form_tag "/", method: :get do %>
+      <div class="row">
+        <div class="form-goal-update-field">
+          <%= label_tag(:goal_title, "Goal Title") %>
+          <%= text_field_tag(:goal_title, "Rediculous Project") %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-goal-update-field">
+          <%= label_tag(:goal_description, "Goal Description") %>
+          <%= text_area_tag(:goal_description, "Make a schedule - delay the schedule - get yelled at - have a beer - focus on firefli.", :size => "80x5", :autofocus => true) %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-review-comment-buttons">
+          <%= submit_tag('Submit Comments', :class => 'button radius') %>
+          <a href="#"><button type="button" class="button alert radius">Cancel</button></a>
+        </div>
+      </div>
+      <% end %>
+    </div>
+</div>
